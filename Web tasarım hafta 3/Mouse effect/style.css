@@ -1,0 +1,10 @@
+[data-cursor-border] {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: url("Flag_of_Turkey.svg.png") no-repeat center/cover;
+  border-radius: 50%;
+  z-index: 9999;
+}

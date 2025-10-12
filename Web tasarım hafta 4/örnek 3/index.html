@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX Deneme</title>
+</head>
+<body>
+
+<h2>Butona basınız Object</h2>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "demo_get.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

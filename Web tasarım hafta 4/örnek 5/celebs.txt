@@ -1,0 +1,6 @@
+<tr><th>İsim</th><th>Meslek</th></tr>
+<tr><td>Tarkan</td><td>Şarkıcı</td></tr>
+<tr><td>Nusret Gökçe</td><td>Şef</td></tr>
+<tr><td>Burak Özçivit</td><td>Oyuncu</td></tr>
+<tr><td>Acun Ilıcalı</td><td>Sunucu</td></tr>
+<tr><td>Hadise</td><td>Şarkıcı</td></tr>

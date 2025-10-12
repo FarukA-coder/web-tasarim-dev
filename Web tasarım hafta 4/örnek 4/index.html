@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>TXT Dosyası Okuma</h2>
+
+<input type="file" id="fileInput" accept=".txt" />
+<p id="demo"></p>
+
+<script>
+document.getElementById('fileInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];  // Seçilen dosya
+  if (!file) {
+    return;  // Dosya seçilmediyse çık
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const text = e.target.result;  // Dosya içeriği
+    document.getElementById('demo').innerText = text;  // Ekrana yazdır
+  };
+
+  reader.readAsText(file);  // Dosyayı metin olarak oku
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+<h3>Ben Faruk 😎</h3>
+<p>Bu metin AJAX ile yüklendi!</p>

@@ -1,0 +1,2 @@
+<h2>Ben Faruk</h2>
+<p>Bu içerik AJAX ile yüklendi ✅</p>

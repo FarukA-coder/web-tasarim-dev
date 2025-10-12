@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FarukFlix - Canlı TV</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Faruk<span>Flix</span></div>
+    <nav class="menu">
+      <a href="#" class="active">Canlı TV</a>
+      <a href="#">Kategoriler</a>
+      <a href="#">Ayarlar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Canlı Kanallar</h1>
+      <p>FarukFlix — Gri & Turuncu arayüz, canlı IPTV deneyimi</p>
+    </section>
+
+    <section id="channel-grid" class="grid"></section>
+  </main>
+
+  <div id="playerModal" class="playerModal">
+    <div class="playerBox">
+      <video id="videoPlayer" controls playsinline></video>
+      <div class="playerControls">
+        <button id="closePlayer">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

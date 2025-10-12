@@ -1,0 +1,137 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #2f3236 0%, #5a5858 40%, #8f6b45 100%);
+  color: #fff5e6;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffb970;
+}
+.brand span {
+  color: #ff8a33;
+}
+
+.menu a {
+  color: #ffe9d3;
+  margin-left: 18px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.menu a.active {
+  text-decoration: underline;
+}
+
+.hero {
+  padding: 26px 32px;
+}
+.hero h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+.hero p {
+  margin: 0;
+  color: #ffd9b3;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 18px 32px 80px 32px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 14px;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  background: #2b2f33;
+}
+.card h3 {
+  margin: 12px 12px 0 12px;
+  font-size: 16px;
+  color: #fff5eb;
+}
+.card p {
+  margin: 6px 12px 12px 12px;
+  font-size: 13px;
+  color: #ffd9b3;
+}
+
+.playerModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,12,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.playerModal.active {
+  display: flex;
+}
+
+.playerBox {
+  width: 92%;
+  max-width: 980px;
+  background: linear-gradient(180deg,#0b1418,#031018);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+.playerBox video {
+  width: 100%;
+  height: 520px;
+  background: black;
+  border-radius: 6px;
+}
+.playerControls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+#closePlayer {
+  background: #ff8a33;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .playerBox video { height: 260px; }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}

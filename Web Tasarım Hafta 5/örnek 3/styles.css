@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#barbar {
+    width: 800px;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+
+#barbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+#barbar ul li {
+    float: left;
+    margin-right: 1px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 16px;
+    border-top: 1px solid #000;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+#barbar ul li:hover {
+    background-color: orange;
+    color: white;
+}
+
+#barbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    /* Eğer li'deki padding a'ya taşınırsa: */
+    /* padding: 10px 15px; */ 
+    /* Eğer li'deki font stilleri a'ya taşınırsa: */
+    /* font-family: "Arial Black", Gadget, sans-serif; */
+    /* font-size: 16px; */
+}
+
+#barbar ul li a:hover {
+    color: white;
+    /* Bu stil, a'nın li:hover içindeki rengini belirler */
+    /* background-color'u li:hover'da verdiğimiz için burada tekrar etmeye gerek yok */
+}

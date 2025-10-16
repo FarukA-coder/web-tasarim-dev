@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS and Forms Example</title>
+    
+    <script>
+        /**
+         * Formdaki adı ve e-posta adresini alır ve bir uyarı kutusunda gösterir.
+         * @param {HTMLFormElement} form - Kendisine gönderilen form nesnesi.
+         */
+        function displayNameEmail(form) {
+            var fullName = form.name.value;
+            var emailAddress = form.email.value;
+            
+            
+            if (fullName === "" || emailAddress === "") {
+                alert("Lütfen tüm alanları doldurun.");
+                return false; 
+            }
+
+            alert('Hey ' + fullName + '. Your email address is ' + emailAddress + '.');
+            
+           
+            return false; 
+        }
+    </script>
+    
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 400px; margin-top: 20px; }
+        td { padding: 8px; }
+        input[type="text"] { width: 100%; padding: 5px; box-sizing: border-box; }
+        /* Düğmenin rengini görseldeki gibi biraz değiştirelim */
+        input[type="submit"] { background-color: #007bff; color: white; border: none; padding: 8px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <form id="form1" name="form1" onsubmit="return displayNameEmail(this);">
+        <table width="50%" border="0">
+            <tr>
+                <td>Full Name:</td>
+                <td>
+                    <input type="text" name="name" id="name" required />
+                    </td>
+            </tr>
+            <tr>
+                <td>Email Address:</td>
+                <td>
+                    <input type="text" name="email" id="email" required />
+                    </td>
+            </tr>
+            <tr>
+                <td></td> 
+                <td>
+                    <input type="submit" name="submit" id="submit" value="Show It!" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

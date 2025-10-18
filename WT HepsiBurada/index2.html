@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hepsiburada Klon</title>
+<style>
+body { font-family: Arial,sans-serif; margin:0; padding:20px; background:#f1f1f1; }
+.container { display:flex; max-width:1200px; margin:auto; background:#fff; border:1px solid #ddd; }
+.sidebar { flex:0 0 250px; border-right:1px solid #eee; }
+.main-content { flex:1; padding:20px; }
+
+/* Yan Menü */
+.yan-menu ul { list-style:none; margin:0; padding:0; }
+.yan-menu > ul > li { position:relative; border-bottom:1px solid #f0f0f0; }
+.yan-menu ul li a { display:block; padding:12px 15px; text-decoration:none; color:#333; background:#fff; }
+.yan-menu > ul > li > a:hover { background:#f9f9f9; }
+.yan-menu .alt-menu { display:none; position:absolute; left:100%; top:0; width:200px; border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1); }
+.yan-menu li:hover > .alt-menu { display:block; }
+
+/* Galeri */
+.buyuk-resim-alani .buyuk-resim { display:none; }
+.buyuk-resim-alani .buyuk-resim:target { display:block; }
+#buyuk-resim-1 { display:block; }
+.buyuk-resim-alani .buyuk-resim:target ~ #buyuk-resim-1 { display:none; }
+.buyuk-resim-alani img { width:100%; height:250px; object-fit:cover; }
+.kucuk-resim-listesi { list-style:none; padding:0; margin:10px 0 0 0; display:flex; }
+.kucuk-resim-listesi li { margin-right:10px; }
+.kucuk-resim-listesi img { width:100px; height:60px; object-fit:cover; border:2px solid #ddd; cursor:pointer; }
+.kucuk-resim-listesi a:hover img { border-color:#f60; }
+
+/* Tablar */
+.tabs { border:1px solid #ddd; }
+.tabs input[type="radio"] { display:none; }
+.tab-basliklari { list-style:none; padding:0; margin:0; display:flex; background:#f1f1f1; }
+.tab-basliklari label { padding:15px 20px; cursor:pointer; font-weight:bold; color:#555; border-right:1px solid #ddd; }
+.tab-icerik-alani { padding:20px; }
+.tab-icerik { display:none; }
+#tab1:checked ~ .tab-icerik-alani #content1,
+#tab2:checked ~ .tab-icerik-alani #content2,
+#tab3:checked ~ .tab-icerik-alani #content3 { display:block; }
+#tab1:checked ~ .tab-basliklari label[for="tab1"],
+#tab2:checked ~ .tab-basliklari label[for="tab2"],
+#tab3:checked ~ .tab-basliklari label[for="tab3"] { background:#fff; color:#f60; }
+
+/* Ürün Kartları */
+.urun-listesi { display:flex; gap:20px; flex-wrap:wrap; }
+.urun-karti { border:1px solid #eee; border-radius:4px; width:200px; text-align:left; padding:10px; box-shadow:0 2px 4px rgba(0,0,0,0.05); }
+.urun-karti img { width:100%; height:150px; object-fit:cover; margin-bottom:10px; }
+.urun-karti h4 { font-size:15px; margin:0 0 10px 0; color:#333; height:40px; overflow:hidden; }
+.urun-karti p { font-size:17px; font-weight:bold; color:#f60; margin:0; }
+.urun-karti p span { font-size:13px; color:#999; font-weight:normal; }
+</style>
+</head>
+<body>
+
+<div class="container">
+<aside class="sidebar">
+<nav class="yan-menu">
+<ul>
+<li><a href="#">Spor / Outdoor</a></li>
+<li><a href="#">Giyim / Ayakkabı &rsaquo;</a>
+<ul class="alt-menu">
+<li><a href="#">Elbise</a></li>
+<li><a href="#">T-Shirt</a></li>
+<li><a href="#">Ayakkabı</a></li>
+<li><a href="#">Pantolon</a></li>
+</ul>
+</li>
+<li><a href="#">Takı / Mücevher</a></li>
+<li><a href="#">Anne / Bebek &rsaquo;</a>
+<ul class="alt-menu">
+<li><a href="#">Bebek Bezi</a></li>
+<li><a href="#">Mama</a></li>
+<li><a href="#">Oyuncak</a></li>
+</ul>
+</li>
+<li><a href="#">Kitap / Film / Müzik</a></li>
+<li><a href="#">Ev Dekorasyonu</a></li>
+</ul>
+</nav>
+</aside>
+
+<main class="main-content">
+
+<section class="galeri-ust">
+<div class="buyuk-resim-alani">
+<div id="buyuk-resim-1" class="buyuk-resim"><img src="img/ayakkabi_beyaz.jpg" alt="Beyaz Spor Ayakkabı"></div>
+<div id="buyuk-resim-2" class="buyuk-resim"><img src="img/ayakkabi_topuklu.jpeg" alt="Kırmızı Topuklu Ayakkabı"></div>
+<div id="buyuk-resim-3" class="buyuk-resim"><img src="img/ayakkabi_bot.jpeg" alt="Kahverengi Bot"></div>
+</div>
+<ul class="kucuk-resim-listesi">
+<li><a href="#buyuk-resim-1"><img src="img/ayakkabi_beyaz.jpg" alt="Küçük Resim 1"></a></li>
+<li><a href="#buyuk-resim-2"><img src="img/ayakkabi_topuklu.jpeg" alt="Küçük Resim 2"></a></li>
+<li><a href="#buyuk-resim-3"><img src="img/ayakkabi_bot.jpeg" alt="Küçük Resim 3"></a></li>
+</ul>
+</section>
+
+<section class="tabs">
+<input type="radio" name="tabs" id="tab1" checked>
+<input type="radio" name="tabs" id="tab2">
+<input type="radio" name="tabs" id="tab3">
+
+<ul class="tab-basliklari">
+<li><label for="tab1">Çok Satanlar</label></li>
+<li><label for="tab2">Yeni Eklenenler</label></li>
+<li><label for="tab3">Beğenilenler</label></li>
+</ul>
+
+<div class="tab-icerik-alani">
+
+<!-- Çok Satanlar -->
+<div class="tab-icerik" id="content1">
+<h3>Çok Satan Ürünler</h3>
+<div class="urun-listesi">
+<div class="urun-karti">
+<img src="img/urun_mavi.jpg" alt="Mavi Spor Ayakkabı">
+<h4>Onitsuka Tiger Mexico 66 Unisex Lacivert Ay...</h4>
+<p>3.249,00 TL <span>+KDV</span></p>
+</div>
+</div>
+</div>
+
+<!-- Yeni Eklenenler -->
+<div class="tab-icerik" id="content2">
+<h3>Yeni Eklenen Ürünler</h3>
+<div class="urun-listesi">
+<div class="urun-karti">
+<img src="img/urun_kirmizi.jpg" alt="Kırmızı Spor Ayakkabı">
+<h4>Nike Air Max 2025 Unisex Kırmızı Ayakkabı</h4>
+<p>4.199,00 TL <span>+KDV</span></p>
+</div>
+<div class="urun-karti">
+<img src="img/urun_siyah.jpg" alt="Siyah Bot">
+<h4>Adidas Outdoor Siyah Bot</h4>
+<p>1.899,00 TL <span>+KDV</span></p>
+</div>
+</div>
+</div>
+
+<!-- Beğenilenler -->
+<div class="tab-icerik" id="content3">
+<h3>Beğenilen Ürünler</h3>
+<div class="urun-listesi">
+<div class="urun-karti">
+<img src="img/urun_yesil.jpg" alt="Yeşil Spor Ayakkabı">
+<h4>Adidas Yeşil Spor Ayakkabı</h4>
+<p>2.499,00 TL <span>+KDV</span></p>
+</div>
+<div class="urun-karti">
+<img src="img/urun_turuncu.jpg" alt="Turuncu Sneaker">
+<h4>Converse Turuncu Sneaker</h4>
+<p>1.299,00 TL <span>+KDV</span></p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+</main>
+</div>
+</body>
+</html>
